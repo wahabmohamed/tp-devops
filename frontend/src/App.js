@@ -4,7 +4,9 @@ function App() {
   const [status, setStatus] = useState("Chargement...");
 
   useEffect(() => {
-    fetch("http://localhost:5000/health")
+    const backendUrl = `${window.location.protocol}//${window.location.hostname}:5000/health`;
+
+    fetch(backendUrl)
       .then((res) => res.json())
       .then((data) => setStatus(data.status))
       .catch(() => setStatus("Erreur de connexion au backend"));
