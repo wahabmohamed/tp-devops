@@ -86,7 +86,7 @@ jobs:
   deploy:
     needs: docker
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && secrets.SSH_HOST != '' && secrets.SSH_USER != '' && secrets.SSH_KEY != ''
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Deploy on server
